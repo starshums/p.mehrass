@@ -1,0 +1,130 @@
+* {
+    direction: rtl;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    font-family: "Segoe UI", sans-serif;
+    color: white;
+}
+
+.main-wrapper {
+    background-color: #f5f5f5;
+}
+
+.wrapper {
+    
+}
+.main-menu, .main-footer {
+    background-color: #e99506;
+}
+
+.main {
+    margin: 0 auto;
+    width: 1080px;
+}
+
+.navbar {
+    padding: 30px;
+}
+
+.main-content {
+    height: 100%;
+    padding: 30px;
+    color: #343a40;
+    border: 1px solid lightgray;
+    position: relative;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    background-color: #f8f9fa;
+}
+.content {
+    padding: 20px;
+    float: left;
+    width: 600px;
+}
+.word-content {
+    border: 1px solid lightgray;
+    border-right: 5px solid #e99506;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.word-post {
+    background-color: #e99506 !important;
+    color: white !important;
+}
+.post-main-content {
+    background-color: #eff0f1 !important;
+    font-weight: normal;
+    line-height: 1.5;
+}
+.word-content:hover {
+    background-color: #e99506;
+}
+.main-word {
+    position: relative;
+    margin: 20px;
+}
+.word, .word-latin, .word-tifinagh {
+    margin-left: 10px;
+    float: right;
+}
+.word-latin-tag, .word-tifinagh-tag {
+    color: white;
+    float: right;
+    padding: 8px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #f9a576;
+    background-color: #f1754e;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+.date, .post-count {
+    margin: 0 20px;
+    margin-bottom: 20px;
+    margin-top: -5px;
+    font-size: small;
+}
+.date {
+    float: left;
+}
+.post-count {
+    float: right;
+}
+.word-link {
+    color: #343a40;
+}
+.word-link:hover {
+    color: white;
+}
+
+
+.side-bar {
+    border: 1px solid lightgray;
+    width: 300px;
+    padding: 20px;
+    float: right;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+.main-footer {
+    
+}
+.footer {
+    padding: 30px;
+}
+
+
+
+
+
+/* Clearfix */
+.clearfix:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+ }
