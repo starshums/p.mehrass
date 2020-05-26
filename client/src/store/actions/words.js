@@ -14,13 +14,13 @@ export const setCurrentWord = word => ({
     word
 });
 
-export const getWords = () => {
+export const getWords = (query = "") => {
     return async dispatch => {
         try {
             dispatch(requestSent(true));
-            const { data: words } = await api.call("get", "words");
+            const { data: words } = await api.call("get", `words${query}`);
             dispatch(setWords(words));
-            dispatch(removeError())
+            dispatch(removeError());
             dispatch(requestRecieved(false));
         } catch(error) {
             const err = error.response.data.message;
@@ -36,7 +36,7 @@ export const getWordPosts = id => {
             const { data: word } = await api.call("get", `words/${id}`);
             dispatch(setPosts(word.posts));
             dispatch(setCurrentWord(word));
-            dispatch(removeError())
+            dispatch(removeError());
             dispatch(requestRecieved(false));
         } catch(error) {
             const err = error.response.data.message;

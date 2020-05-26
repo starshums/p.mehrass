@@ -180,6 +180,28 @@ body {
   color: white;
 }
 
+.btn-load-more-words {
+  display: table;
+  margin: 15px auto;
+  background-color: #e99506;
+  color: #eff0f1;
+  border-radius: 2px;
+  border: none;
+  padding: 10px 50px;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+  font-weight: bold;
+  font-size: 16px;
+  border: 3px solid #e99506;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  justify-content: center;
+}
+.btn-load-more-words:hover {
+  cursor: pointer;
+  color: #e99506;
+  background-color: #eff0f1;
+  border: 3px solid #e99506;
+}
+
 .main-sidebar {
   float: left;  
 }

@@ -5,14 +5,15 @@ exports.getWords = async (req, res, next) => {
     try {
         //const words = await db.Word.find().select('-posts');
 
-        await db.Word.aggregate()
-        .project({ "posts_count": { "$size": "$posts" }, "text": 1, "created_at": 1 })
-        .exec(function (err, words) {
-            if(err) throw err;
-            res.status(200).json(words);
-        });
+        // await db.Word.aggregate()
+        // .project({ "posts_count": { "$size": "$posts" }, "text": 1, "created_at": 1 })
+        // .exec(function (err, words) {
+        //     if(err) throw err;
+        //     res.status(200).json(words);
+        // });
 
-        // res.status(200).json(words);
+        res.status(200).json( req.pagination );
+
     } catch(error) {
         error.status = 400;
         next(error);
