@@ -104,7 +104,7 @@ body {
   color: white !important;
   background-color: #e99506 !important;
   box-shadow: none !important;
-  text-decoration: underline;
+  opacity: .9;
 }
 
 .main-content {

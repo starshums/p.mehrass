@@ -18,9 +18,10 @@ class Words extends Component {
   }
 
   componentWillMount() {
+    console.log(this.props.words);
     this.props.getWords();
     this.setState({
-      words: this.props.words.rows
+      words: this.props.words
     });
   }
 
@@ -32,21 +33,14 @@ class Words extends Component {
     });
   }
 
-  // handleLoadMore() {
-  //   this.props.getWords("?page=2&limit=2");
-  //   this.setState(prevState => ({
-  //     words: [prevState.words, ...this.props.words.rows]
-  //   }));
-  //   console.log(this.state.words);
-  // }
-
   handleLoadMore() {
     const query = `?page=${this.state.page++}&limit=${this.state.limit++}`;
     this.props.getWords(query).then( () => {
       this.setState( prevState => ({
-        words: [...prevState.words, ...this.props.words.rows],
+        words: [...prevState.words, ...this.props.words],
       }));
     });
+    // window.scrollTo(0,document.body.scrollHeight);
   }
 
   renderWords() {
@@ -60,7 +54,7 @@ class Words extends Component {
               <div className="word-latin">[zga : α]</div>
               <div className="word-tifinagh">[ⵣⴳⴰ : ⵣ]</div>
             </div>
-            <div className="post-count">{word.posts_count && 0} مفاهيم</div>
+            <div className="post-count">{ word.posts_count } مفاهيم</div>
             <div className="date">
               {new Date(word.created_at).toLocaleString("en-GB")}
             </div>
@@ -78,9 +72,9 @@ class Words extends Component {
           { this.renderWords() }
           { this.props.isFetching ? <Spinner /> : "" }
         </div>
-        {this.props.words.pagination.hasMore && !this.props.isFetching && (
+        {this.props.pagination.hasMore && !this.props.isFetching && (
           <button onClick={this.handleLoadMore} className="btn-load-more-words">
-              إظهار المزيد </button>
+           إظهار المزيد ({ this.props.pagination.remaining }) </button>
         )}
       </div>
     );
@@ -89,7 +83,8 @@ class Words extends Component {
 
 export default connect(
   (store) => ({
-    words: store.words,
+    words: store.words.words,
+    pagination: store.words.pagination,
     posts: store.posts,
     isFetching: store.isFetching.isFetching,
   }),

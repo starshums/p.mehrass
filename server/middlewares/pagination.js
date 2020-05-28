@@ -17,6 +17,7 @@ module.exports = (model) => async (req,res,next) => {
         }
     }
 
+    results.pagination.remaining = totalCount - ( startIndex + limit );
     results.pagination.hasMore = totalCount - ( startIndex + limit ) > 0;
     results.pagination.currentPage = page;
     results.pagination.limit = limit;

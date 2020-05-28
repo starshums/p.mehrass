@@ -33,8 +33,7 @@ class Posts extends Component {
 
           <div className="date">
             <a href="">
-              {" "}
-              {post.user.username ? post.user.username : post.user.email}{" "}
+              {post.user.username ? post.user.username : post.user.email}
             </a>
           </div>
         </div>
@@ -54,7 +53,7 @@ class Posts extends Component {
         <br />
         <br />
         <br />
-        { this.props.isFetching ? <Spinner /> : this.renderPosts() }
+        {this.props.isFetching ? <Spinner /> : this.renderPosts()}
       </Fragment>
     );
   }
@@ -64,7 +63,7 @@ export default connect(
   (store) => ({
     auth: store.auth,
     posts: store.posts,
-    isFetching: store.isFetching.isFetching
+    isFetching: store.isFetching.isFetching,
   }),
   { getPosts, getUserPosts }
 )(Posts);
