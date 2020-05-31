@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { getWords, getWordPosts } from "../store/actions";
 import Spinner from "../components/Spinner";
+import WordCard from "./WordCard";
 
 class Words extends Component {
   constructor(props) {
@@ -13,7 +14,6 @@ class Words extends Component {
       limit: 2
     };
 
-    this.handleWordClick = this.handleWordClick.bind(this);
     this.handleLoadMore = this.handleLoadMore.bind(this);
   }
 
@@ -27,11 +27,6 @@ class Words extends Component {
     this.setState({ words: this.props.words });
   }
 
-  handleWordClick(id) {
-    this.clearState();
-    this.props.history.push(`/words/${id}`);
-  }
-
   handleLoadMore() {
     const query = `?page=${this.state.page++}&limit=${this.state.limit}`;
     this.props.getWords(query).then( () => {
@@ -43,22 +38,7 @@ class Words extends Component {
 
   renderWords() {
     return this.state.words.map((word) => (
-      <Fragment key={word._id}>
-        <br />
-        <a onClick={() => this.handleWordClick(word._id)} className="word-link">
-          <div className="word-content clearfix">
-            <div className="main-word clearfix">
-              <div className="word">{word.text}</div>
-              <div className="word-latin">[zga : α]</div>
-              <div className="word-tifinagh">[ⵣⴳⴰ : ⵣ]</div>
-            </div>
-            <div className="post-count">{ word.posts_count } مفاهيم</div>
-            <div className="date">
-              {new Date(word.created_at).toLocaleString("en-GB")}
-            </div>
-          </div>
-        </a>
-      </Fragment>
+      <WordCard history={this.props.history} word={word} />
     ));
   }
 

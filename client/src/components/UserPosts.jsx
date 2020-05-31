@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { getUserPosts } from "../store/actions";
 import Spinner from "./Spinner";
+import PostCard from "./PostCard";
 
 class UserPosts extends Component {
   constructor(props) {
@@ -13,7 +14,6 @@ class UserPosts extends Component {
       limit: 2,
     };
 
-    this.handlePostClick = this.handlePostClick.bind(this);
     this.handleLoadMore = this.handleLoadMore.bind(this);
   }
 
@@ -23,15 +23,8 @@ class UserPosts extends Component {
 
   componentDidMount() {
     this.clearState();
-    this.props.getUserPosts().then(() => {
-      this.setState({ posts: this.props.posts });
-    });
+    this.props.getUserPosts().then(() => { this.setState({ posts: this.props.posts }); });
     this.setState({ posts: this.props.posts });
-  }
-
-  handlePostClick(id) {
-    const { history } = this.props;
-    history.push(`/post/${id}`);
   }
 
   handleLoadMore() {
@@ -41,24 +34,11 @@ class UserPosts extends Component {
         posts: [...prevState.posts, ...this.props.posts],
       }));
     });
-    console.log("page=", this.state.page);
   }
 
   renderUserPosts() {
     return this.state.posts.map((post) => (
-      <Fragment key={post._id}>
-        <div className="word-content post-main-content clearfix">
-          <div className="main-word clearfix">{post.text}</div>
-
-          <div className="post-count" onClick={() => this.handlePostClick(post._id)} >
-            {new Date(post.created_at).toLocaleString("en-GB")}
-          </div>
-
-          <div className="date"> </div>
-        </div>
-
-        <br />
-      </Fragment>
+      <PostCard history={this.props.history} post={post} />
     ));
   }
 
