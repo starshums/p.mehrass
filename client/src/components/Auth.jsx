@@ -74,7 +74,4 @@ class Auth extends Component {
     }
 }
 
-export default connect(
-    () => ({}),
-    {authUser, logout}
-)(Auth);
+export default connect( () => ({}), {authUser, logout} )(Auth);

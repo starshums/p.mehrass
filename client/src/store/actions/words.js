@@ -23,19 +23,24 @@ export const getWords = (query = "") => {
             dispatch(removeError());
             dispatch(requestRecieved(false));
         } catch(error) {
+            console.log(error);
             const err = error.response.data.message;
             dispatch(addError(err));
         }
     }
 }
 
-export const getWordPosts = id => {
+export const getWordPosts = (id, query = "") => {
     return async dispatch => {
         try {
             dispatch(requestSent(true));
-            const { data: word } = await api.call("get", `words/${id}`);
-            dispatch(setPosts(word.posts));
-            dispatch(setCurrentWord(word));
+            const { data: word } = await api.call("get", `words/${id}${query}`);
+            const posts = {
+                posts: word.word[0].posts,
+                pagination: word.pagination
+            }
+            dispatch(setPosts(posts));
+            dispatch(setCurrentWord(word.word[0]));
             dispatch(removeError());
             dispatch(requestRecieved(false));
         } catch(error) {

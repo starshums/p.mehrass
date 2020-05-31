@@ -34,6 +34,7 @@ const loadState = () => {
 }
 
 const PERSISTED_STATE = loadState();
+
 const store = createStore(
     rootReducer,
     PERSISTED_STATE,

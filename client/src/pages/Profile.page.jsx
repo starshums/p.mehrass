@@ -11,11 +11,6 @@ const ProfilePage = (props) => {
     return (
         <Fragment>
             <h1> { props.auth.user.username } </h1>
-            { props.auth.isAuthenticated && (
-                    <div>
-                        <button className="" onClick={props.getUserPosts} > My posts </button>
-                    </div>
-                )}
             <UserPosts { ...props } />
         </Fragment>
     )
@@ -23,5 +18,4 @@ const ProfilePage = (props) => {
 
 export default connect( store => ({
     auth: store.auth,
-    posts: store.posts
-}), { getUserPosts} )(ProfilePage);
+    posts: store.posts }), { getUserPosts} )(ProfilePage);

@@ -28,11 +28,15 @@ export const getPosts = () => {
     }
 }
 
-export const getUserPosts = () => {
+export const getUserPosts = ( query = "" ) => {
     return async dispatch => {
         try {
             dispatch(requestSent(true));
-            const { data: posts } = await api.call("get", "posts/user");
+            const { data: userPosts } = await api.call("get", `posts/user${query}`);
+            const posts = {
+                posts: userPosts.posts[0].posts,
+                pagination: userPosts.pagination
+            }
             dispatch(setPosts(posts));
             dispatch(removeError())
             dispatch(requestRecieved(false));

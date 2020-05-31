@@ -17,30 +17,28 @@ class Words extends Component {
     this.handleLoadMore = this.handleLoadMore.bind(this);
   }
 
+  clearState() {
+    this.setState({ words: {} });
+  }
+
   componentWillMount() {
-    console.log(this.props.words);
-    this.props.getWords();
-    this.setState({
-      words: this.props.words
-    });
+    this.clearState();
+    this.props.getWords().then(() => { this.setState({ words: this.props.words }); });
+    this.setState({ words: this.props.words });
   }
 
   handleWordClick(id) {
-    this.props.getWordPosts(id);
+    this.clearState();
     this.props.history.push(`/words/${id}`);
-    this.setState({
-      words: {}
-    });
   }
 
   handleLoadMore() {
-    const query = `?page=${this.state.page++}&limit=${this.state.limit++}`;
+    const query = `?page=${this.state.page++}&limit=${this.state.limit}`;
     this.props.getWords(query).then( () => {
       this.setState( prevState => ({
         words: [...prevState.words, ...this.props.words],
       }));
     });
-    // window.scrollTo(0,document.body.scrollHeight);
   }
 
   renderWords() {
@@ -85,7 +83,6 @@ export default connect(
   (store) => ({
     words: store.words.words,
     pagination: store.words.pagination,
-    posts: store.posts,
     isFetching: store.isFetching.isFetching,
   }),
   { getWords, getWordPosts }
