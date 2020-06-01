@@ -38,7 +38,7 @@ class Words extends Component {
 
   renderWords() {
     return this.state.words.map((word) => (
-      <WordCard history={this.props.history} word={word} />
+      <WordCard key={word._id} history={this.props.history} word={word} />
     ));
   }
 

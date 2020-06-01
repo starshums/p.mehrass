@@ -13,7 +13,7 @@ class PostCard extends Component {
     }
 
     render() {
-        return <Fragment key={this.props.post._id}>
+        return <Fragment>
         <div className="word-content post-main-content clearfix">
           <div className="main-word clearfix">{this.props.post.text}</div>
 

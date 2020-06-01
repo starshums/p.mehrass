@@ -38,7 +38,7 @@ class UserPosts extends Component {
 
   renderUserPosts() {
     return this.state.posts.map((post) => (
-      <PostCard history={this.props.history} post={post} />
+      <PostCard key={post._id} history={this.props.history} post={post} />
     ));
   }
 

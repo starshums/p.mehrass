@@ -13,7 +13,7 @@ class WordCard extends Component {
     }
 
     render() {
-        return <Fragment key={this.props.word._id}>
+        return <Fragment>
         <br />
         <a onClick={() => this.handleWordClick(this.props.word._id)} className="word-link">
           <div className="word-content clearfix">
