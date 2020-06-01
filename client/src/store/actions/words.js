@@ -23,7 +23,6 @@ export const getWords = (query = "") => {
             dispatch(removeError());
             dispatch(requestRecieved(false));
         } catch(error) {
-            console.log(error);
             const err = error.response.data.message;
             dispatch(addError(err));
         }

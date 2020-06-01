@@ -4,12 +4,23 @@ import rootReducer from "./reducers";
 
 const DEFAULT_STATE = {
     error: { message: null },
+    words: {
+        words: [],
+        pagination: {}
+    },
     currentWord: {
         posts: []
     },
     currentPost: {
         word: { text: "" },
         user: { username: "" }
+    },
+    posts: {
+        posts: [],
+        pagination: {
+            hasMore: false,
+            total: 0
+        }
     }
 }
 
@@ -28,7 +39,6 @@ const loadState = () => {
         if(serializedState === null) return DEFAULT_STATE;
         return JSON.parse(serializedState);
     } catch(error) {
-        console.log(error);
         return DEFAULT_STATE;
     }
 }

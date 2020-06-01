@@ -53,11 +53,11 @@ class UserPosts extends Component {
           {this.renderUserPosts()}
           {this.props.isFetching ? <Spinner /> : ""}
         </div>
-        {this.props.pagination.hasMore && !this.props.isFetching && (
+        { this.props.pagination.hasMore ? this.props.pagination.hasMore && !this.props.isFetching && (
           <button onClick={this.handleLoadMore} className="btn-load-more-words">
             إظهار المزيد ({this.props.pagination.remaining}){" "}
           </button>
-        )}
+        ) : "" }
       </Fragment>
     );
   }

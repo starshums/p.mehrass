@@ -1,6 +1,6 @@
 import { SET_CURRENT_POST, SET_POSTS } from "../action.types";
 
-export const posts = (state = [], action) => {
+export const posts = (state = {}, action) => {
     switch(action.type) {
         case SET_POSTS:
             return action.posts;
