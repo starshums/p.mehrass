@@ -16,7 +16,6 @@ const NavBar = ({ auth, logout }) => (
               <ul className="nav-links">
                 <li> <a className="logo" href="/" style={{color: "white"}}> <FontAwesomeIcon icon={faWrench} /> </a> </li>
                 <li> <Link to="/" ><FontAwesomeIcon icon={faHome} /> الصفحة الرئيسية </Link></li>
-                <li> <Link to="/test"><FontAwesomeIcon icon={faXRay} /> تجريبي</Link> </li>
                 <li> <Link to="/add-post"><FontAwesomeIcon icon={faPlusCircle} /> إضافة</Link> </li>
               </ul>
 

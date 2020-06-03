@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { createPost } from "../store/actions";
+import store from "../store";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSave } from "@fortawesome/free-solid-svg-icons";
+import Word from "./Word";
 
 class AddPost extends Component {
 
@@ -8,7 +12,8 @@ class AddPost extends Component {
         super(props);
 
         this.state = {
-            text: ""
+            text: "",
+            wordId: this.props.word._id
         }
 
         this.handleOnChange = this.handleOnChange.bind(this);
@@ -29,20 +34,28 @@ class AddPost extends Component {
     render() {
         return <div>
 
-            <form onSubmit={ this.handleOnSubmit }>
+            <Word />
+            <br/>
+            <br/>
+            <br/>
 
-                <label htmlFor="text">Post text</label><br />
+            <form onSubmit={ this.handleOnSubmit }>
                 <textarea type="text"
+                    className="add-post-area"
                     value={this.state.text}
                     name="text"
                     autoComplete="off"
-                    onChange={this.handleOnChange} />
+                    onChange={this.handleOnChange}
+                    rows="30"/>
                 <br /><br />
 
-                <button type="submit"> Add post </button>
+                <button type="submit" className="btn-load-more-words"> 
+                <FontAwesomeIcon icon= { faSave } />   إضافة مفهوم    </button>
             </form>
         </div>
     }
 }
 
-export default connect( () => ({}), { createPost })(AddPost);
+export default connect( (store) => ({
+    word: store.currentWord
+}), { createPost })(AddPost);

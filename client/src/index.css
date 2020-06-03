@@ -129,6 +129,7 @@ body {
   border-radius: 3px;
   font-weight: bold;
   margin-bottom: 20px;
+  width: 100%;
 }
 .word-post {
   background-color: #e99506 !important;
@@ -201,6 +202,28 @@ body {
   background-color: #eff0f1;
   border: 3px solid #e99506;
 }
+
+
+.add-post-area {
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+  border: 1 solid lightgray;
+  border-radius: 3px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .main-sidebar {
   float: left;  

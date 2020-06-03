@@ -31,6 +31,7 @@ export const authUser = (path, data) => {
             dispatch(removeError());
         } catch(error) {
             const err = error.response.data.message;
+            console.log( err );
             dispatch(addError(err));
         }
     }

@@ -4,6 +4,8 @@ import { getWordPosts } from "../store/actions";
 import Word from "../components/Word";
 import Spinner from "./Spinner";
 import PostCard from "./PostCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSave } from "@fortawesome/free-solid-svg-icons";
 
 class Posts extends Component {
   constructor(props) {
@@ -16,6 +18,7 @@ class Posts extends Component {
     }
 
     this.handleLoadMore = this.handleLoadMore.bind(this);
+    this.handleAddPostClick = this.handleAddPostClick.bind(this);
   }
 
   clearState() {
@@ -45,6 +48,10 @@ class Posts extends Component {
     ));
   }
 
+  handleAddPostClick() {
+    this.props.history.push("/add-post");
+  }
+
   render() {
     return (
       <Fragment>
@@ -52,8 +59,11 @@ class Posts extends Component {
         <br />
         <Word />
         <br />
-        <br />
-        <br />
+        <br/>
+        <br/>
+        <a className="btn-load-more-words"
+          onClick={() => this.handleAddPostClick()} > 
+          <FontAwesomeIcon icon={ faSave } />  إضافة مفهوم  </a>
         <br />
         <div className="posts">
           { this.renderPosts() }

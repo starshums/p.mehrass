@@ -50,7 +50,7 @@ export const createPost = data => {
     return async dispatch => {
         try {
             const post = await api.call("post", "posts", data);
-            dispatch(setCurrentPost(post));
+            // dispatch(setCurrentPost(post));
             dispatch(removeError())
         } catch(error) {
             const err = error.response.data.message;
