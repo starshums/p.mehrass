@@ -5,13 +5,15 @@ exports.getWords = async (req, res, next) => {
   try {
       
     let page = parseInt(req.query.page) || 1;
-    let limit = parseInt(req.query.limit) || 2;
+    let limit = parseInt(req.query.limit) || 5;
     const skip = (page - 1) * limit;
 
     const words = await db.Word.aggregate()
     .project({
         "posts_count": { "$size": "$posts" },
         "text": 1,
+        "tifinagh": 1,
+        "latin": 1,
         "created_at": 1
     })
     .limit(skip + limit)
@@ -31,7 +33,7 @@ exports.getWords = async (req, res, next) => {
 exports.getWordPosts = async (req, res, next) => {
   try {
     let page = parseInt(req.query.page) || 1;
-    let limit = parseInt(req.query.limit) || 2;
+    let limit = parseInt(req.query.limit) || 5;
     const skip = (page - 1) * limit;
 
     const { id } = req.params;
@@ -41,6 +43,8 @@ exports.getWordPosts = async (req, res, next) => {
       { $project: {
           postsCount: { $size: "$posts" },
           text: 1,
+          tifinagh: 1,
+          latin: 1,
           created_at: 1,
           posts: 1,
         },

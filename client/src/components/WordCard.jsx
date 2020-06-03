@@ -19,8 +19,12 @@ class WordCard extends Component {
           <div className="word-content clearfix">
             <div className="main-word clearfix">
               <div className="word">{this.props.word.text}</div>
-              <div className="word-latin">[zga : α]</div>
-              <div className="word-tifinagh">[ⵣⴳⴰ : ⵣ]</div>
+              <div className="word-latin">
+                { this.props.word.latin ? `· ${this.props.word.latin} : α` : ""}
+              </div>
+              <div className="word-tifinagh">
+                { this.props.word.tifinagh ? `· ${this.props.word.tifinagh} : ⵣ` : ""}
+              </div>
             </div>
             <div className="post-count">{ this.props.word.posts_count } مفاهيم</div>
             <div className="date">

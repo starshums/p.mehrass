@@ -11,7 +11,7 @@ class Words extends Component {
     this.state = {
       words: {},
       page: 2,
-      limit: 2
+      limit: 5
     };
 
     this.handleLoadMore = this.handleLoadMore.bind(this);

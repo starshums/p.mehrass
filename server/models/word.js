@@ -3,7 +3,14 @@ const mongoose = require("mongoose");
 const wordSchema = new mongoose.Schema({
     text: {
         type: String,
-        unique: true
+        unique: true,
+        required: true
+    },
+    tifinagh: {
+        type: String
+    },
+    latin: {
+        type: String
     },
     created_at: {
         type: Date,

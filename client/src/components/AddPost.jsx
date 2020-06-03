@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { createPost } from "../store/actions";
-import store from "../store";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave } from "@fortawesome/free-solid-svg-icons";
 import Word from "./Word";
@@ -32,17 +31,21 @@ class AddPost extends Component {
     }
 
     render() {
-        return <div>
 
+        const { text } = this.state;
+
+        return <div>
             <Word />
             <br/>
             <br/>
             <br/>
 
             <form onSubmit={ this.handleOnSubmit }>
+
+                <label htmlFor="latin"> الشرح ! : </label><br />
                 <textarea type="text"
                     className="add-post-area"
-                    value={this.state.text}
+                    value={ text }
                     name="text"
                     autoComplete="off"
                     onChange={this.handleOnChange}
@@ -50,12 +53,13 @@ class AddPost extends Component {
                 <br /><br />
 
                 <button type="submit" className="btn-load-more-words"> 
-                <FontAwesomeIcon icon= { faSave } />   إضافة مفهوم    </button>
+                <FontAwesomeIcon icon= { faSave } />   إضافة    </button>
             </form>
         </div>
     }
 }
 
 export default connect( (store) => ({
-    word: store.currentWord
+    word: store.currentWord,
+    isFetching: store.isFetching.isFetching
 }), { createPost })(AddPost);

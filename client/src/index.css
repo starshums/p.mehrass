@@ -206,10 +206,24 @@ body {
 
 .add-post-area {
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+  border: none;
   border: 1 solid lightgray;
   border-radius: 3px;
   width: 100%;
-  margin: 0 auto;
+  margin: 10px auto;
+}
+
+label {
+  font-size: 16x;
+}
+input {
+  border: none;
+  border: 1 solid lightgray;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+  border-radius: 3px;
+  width: 100%;
+  padding: 10px 0;
+  margin: 10px auto;
 }
 
 

@@ -42,7 +42,7 @@ exports.addPost = async (req, res, next) => {
 exports.userPosts = async (req, res, next) => {
   try {
     let page = parseInt(req.query.page) || 1;
-    let limit = parseInt(req.query.limit) || 2;
+    let limit = parseInt(req.query.limit) || 5;
     const skip = (page - 1) * limit;
 
     const { id } = req.user;

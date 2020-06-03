@@ -1,8 +1,8 @@
 module.exports = (req, count) => {
     let page = parseInt(req.query.page) || 1;
-    let limit = parseInt(req.query.limit) || 2;
+    let limit = parseInt(req.query.limit) || 5;
     page = page <= 1 ? 1 : page;
-    limit = Math.min(2, Math.max(1, limit));
+    limit = Math.min(5, Math.max(1, limit));
 
     const startIndex = (page - 1) * limit;
     const endIndex = (page) * limit;

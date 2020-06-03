@@ -5,7 +5,7 @@ import Word from "../components/Word";
 import Spinner from "./Spinner";
 import PostCard from "./PostCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSave } from "@fortawesome/free-solid-svg-icons";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
 class Posts extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Posts extends Component {
     this.state = {
       posts: [],
       page: 2,
-      limit: 2
+      limit: 5
     }
 
     this.handleLoadMore = this.handleLoadMore.bind(this);
@@ -63,7 +63,7 @@ class Posts extends Component {
         <br/>
         <a className="btn-load-more-words"
           onClick={() => this.handleAddPostClick()} > 
-          <FontAwesomeIcon icon={ faSave } />  إضافة مفهوم  </a>
+          <FontAwesomeIcon icon={ faPlusCircle } />  إضافة مفهوم  </a>
         <br />
         <div className="posts">
           { this.renderPosts() }

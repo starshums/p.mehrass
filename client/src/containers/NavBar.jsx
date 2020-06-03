@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../store/actions";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faWrench, faPlusCircle, faXRay, faUser, faDoorOpen, faDoorClosed, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faPlusCircle, faUser, faDoorOpen, faDoorClosed, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = ({ auth, logout }) => (
   <Fragment>
@@ -14,7 +14,7 @@ const NavBar = ({ auth, logout }) => (
           <div className="main-nav-links clearfix">
 
               <ul className="nav-links">
-                <li> <a className="logo" href="/" style={{color: "white"}}> <FontAwesomeIcon icon={faWrench} /> </a> </li>
+                <li> <a className="logo" href="/" style={{color: "white"}}> <FontAwesomeIcon icon={ faHome } /> </a> </li>
                 <li> <Link to="/" ><FontAwesomeIcon icon={faHome} /> الصفحة الرئيسية </Link></li>
                 <li> <Link to="/add-post"><FontAwesomeIcon icon={faPlusCircle} /> إضافة</Link> </li>
               </ul>

@@ -8,19 +8,25 @@ const Word = ({ word, isFetching }) => {
   <div className="word-content word-post clearfix">
     <div className="main-word clearfix">
       <div className="word">{word.text}</div>
-      <div className="word-latin">[zga : α]</div>
-      <div className="word-tifinagh">[ⵣⴳⴰ : ⵣ]</div>
+      <div className="word-latin">{ word.latin ? `· [${word.latin} : α]` : ""}</div>
+      <div className="word-tifinagh">{ word.tifinagh ? `· [${word.tifinagh} : ⵣ]` : ""}</div>
     </div>
 
     <div className="post-count">{ word.postsCount } مفاهيم</div>
   </div>
 
+  { word.latin ?
   <div className="word-latin-tag">
-    <b>لاتيني</b> : zga
+    <b>لاتيني</b> : {word.latin}
   </div>
+  : "" }
+
+  { word.tifinagh ?
   <div className="word-tifinagh-tag">
-    <b>تيفيناغ</b> : ⵣⴳⴰ
+    <b>تيفيناغ</b> : {word.tifinagh}
   </div>
+  : "" }
+
 </Fragment>
 
 };
