@@ -4,6 +4,9 @@ import rootReducer from "./reducers";
 
 const DEFAULT_STATE = {
     error: { message: null },
+    auth: {
+        user: { username: "" }
+    },
     words: {
         words: [],
         pagination: {}

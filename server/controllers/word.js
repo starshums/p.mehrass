@@ -3,12 +3,15 @@ const db = require("../models");
 // Get all words
 exports.getWords = async (req, res, next) => {
   try {
-      
+    const query = req.query.q || "";
     let page = parseInt(req.query.page) || 1;
     let limit = parseInt(req.query.limit) || 5;
     const skip = (page - 1) * limit;
 
     const words = await db.Word.aggregate()
+    .match({
+      "text": { "$regex": query }
+    })
     .project({
         "posts_count": { "$size": "$posts" },
         "text": 1,
@@ -19,7 +22,8 @@ exports.getWords = async (req, res, next) => {
     .limit(skip + limit)
     .skip(skip);
 
-    const wordsCount = await db.Word.countDocuments().exec();
+    // const wordsCount = await db.Word.countDocuments().exec();
+    const wordsCount = words.length;
     const pagination = db.pagination(req, wordsCount);
     res.status(200).json({words, pagination});
 

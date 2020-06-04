@@ -45,7 +45,7 @@ class Words extends Component {
   render() {
     return (
       <div>
-        <h1> الكلمات : </h1>
+        <h2> الكلمات : </h2>
         <div id="words">
           { this.renderWords() }
           { this.props.isFetching ? <Spinner /> : "" }

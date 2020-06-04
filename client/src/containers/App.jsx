@@ -8,6 +8,7 @@ import RouteViews from "../containers/RouteViews";
 import NavBar from "../containers/NavBar";
 import SideBar from "../containers/SideBar";
 import Footer from "./Footer";
+import SearchBar from "../containers/SearchBar";
 
 if (localStorage.ACCESS_TOKEN) {
   try {
@@ -28,6 +29,8 @@ const App = () => (
         <div className="main-wrapper">
 
           <NavBar />
+
+          <SearchBar />
 
           <div className="wrapper clearfix">
             <div className="main">

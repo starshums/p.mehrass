@@ -48,12 +48,12 @@ class AddPost extends Component {
                     value={ text }
                     name="text"
                     autoComplete="off"
-                    onChange={this.handleOnChange}
+                    onChange={ this.handleOnChange }
                     rows="30"/>
                 <br /><br />
 
                 <button type="submit" className="btn-load-more-words"> 
-                <FontAwesomeIcon icon= { faSave } />   إضافة    </button>
+                    <FontAwesomeIcon icon= { faSave } />   إضافة    </button>
             </form>
         </div>
     }
