@@ -46,11 +46,11 @@ export const getUserPosts = ( query = "" ) => {
     }
 }
 
-export const createPost = data => {
+export const createPost = request => {
     return async dispatch => {
         try {
-            const post = await api.call("post", "posts", data);
-            // dispatch(setCurrentPost(post));
+            const { data: post } = await api.call("post", "posts", request);
+            dispatch(setCurrentPost(post));
             dispatch(removeError())
         } catch(error) {
             const err = error.response.data.message;

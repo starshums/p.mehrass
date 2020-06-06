@@ -22,8 +22,20 @@ exports.getWords = async (req, res, next) => {
     .limit(skip + limit)
     .skip(skip);
 
+    const foundWordsForCount = await db.Word.aggregate()
+    .match({
+      "text": { "$regex": query }
+    })
+    .project({
+        "posts_count": { "$size": "$posts" },
+        "text": 1,
+        "tifinagh": 1,
+        "latin": 1,
+        "created_at": 1
+    })
+
     // const wordsCount = await db.Word.countDocuments().exec();
-    const wordsCount = words.length;
+    const wordsCount = foundWordsForCount.length;
     const pagination = db.pagination(req, wordsCount);
     res.status(200).json({words, pagination});
 

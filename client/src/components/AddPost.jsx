@@ -10,9 +10,11 @@ class AddPost extends Component {
     constructor(props) {
         super(props);
 
+        const { _id } = this.props.word;
+
         this.state = {
             text: "",
-            wordId: this.props.word._id
+            wordId: _id
         }
 
         this.handleOnChange = this.handleOnChange.bind(this);
@@ -26,8 +28,10 @@ class AddPost extends Component {
     }
 
     handleOnSubmit(e) {
+        const { createPost, history } = this.props;
         e.preventDefault();
-        this.props.createPost(this.state);
+        createPost(this.state);
+        history.push(`/post/${this.props.post._id}`);
     }
 
     render() {
@@ -42,7 +46,7 @@ class AddPost extends Component {
 
             <form onSubmit={ this.handleOnSubmit }>
 
-                <label htmlFor="latin"> الشرح ! : </label><br />
+                <label htmlFor="latin"> الشرح : </label><br />
                 <textarea type="text"
                     className="add-post-area"
                     value={ text }
@@ -61,5 +65,6 @@ class AddPost extends Component {
 
 export default connect( (store) => ({
     word: store.currentWord,
-    isFetching: store.isFetching.isFetching
+    isFetching: store.isFetching.isFetching,
+    post: store.currentPost
 }), { createPost })(AddPost);

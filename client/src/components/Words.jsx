@@ -23,7 +23,12 @@ class Words extends Component {
 
   componentWillMount() {
     this.clearState();
-    this.props.getWords().then(() => { this.setState({ words: this.props.words }); });
+    const { query } = this.props.match.params;
+    if( !query ) {
+      this.props.getWords().then(() => { this.setState({ words: this.props.words }); });
+    } else {
+      this.props.getWords(`?q=${query}`).then(() => { this.setState({ words: this.props.words }); });
+    }
     this.setState({ words: this.props.words });
   }
 

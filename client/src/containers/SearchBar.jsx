@@ -4,6 +4,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { getWords } from "../store/actions";
+import { withRouter } from "react-router-dom";
 
 class SearchBar extends Component {
 
@@ -26,7 +27,8 @@ class SearchBar extends Component {
 
     handleOnSubmit(e) {
         e.preventDefault();
-        const query = `?q=${this.state.query}`;
+        const query = `${this.state.query}`;
+        this.props.history.push(`/search/${query}`);
         this.props.getWords(query);
     }
     
@@ -39,7 +41,7 @@ class SearchBar extends Component {
                 <div className="main">
                     <div className="search-container">
                         <form onSubmit={ this.handleOnSubmit }>
-                            <label htmlFor=""><FontAwesomeIcon icon={ faSearch } /> <b> إبحث عن الكلمة التالية : </b> </label>
+                            <h1><label htmlFor=""><FontAwesomeIcon icon={ faSearch } /> <b> إبحث عن الكلمة التالية : </b> </label></h1>
                             <input type="text"
                                 name="query"
                                 id="query"
@@ -55,4 +57,4 @@ class SearchBar extends Component {
     }
 }
 
-export default connect( null, { getWords })(SearchBar);
+export default withRouter(connect( null, { getWords })(SearchBar));
