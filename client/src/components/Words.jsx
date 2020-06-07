@@ -11,7 +11,8 @@ class Words extends Component {
     this.state = {
       words: {},
       page: 2,
-      limit: 5
+      limit: 5,
+      isSearch: false
     };
 
     this.handleLoadMore = this.handleLoadMore.bind(this);
@@ -24,12 +25,10 @@ class Words extends Component {
   componentWillMount() {
     this.clearState();
     const { query } = this.props.match.params;
-    if( !query ) {
-      this.props.getWords().then(() => { this.setState({ words: this.props.words }); });
-    } else {
-      this.props.getWords(`?q=${query}`).then(() => { this.setState({ words: this.props.words }); });
-    }
+    if( !query ) this.props.getWords().then(() => { this.setState({ words: this.props.words }); });
+      else this.props.getWords(`?q=${query}`).then(() => { this.setState({ words: this.props.words }); });
     this.setState({ words: this.props.words });
+    if( window.location.href.includes("search") ) this.setState({ isSearch: true });
   }
 
   handleLoadMore() {
@@ -48,9 +47,12 @@ class Words extends Component {
   }
 
   render() {
+
+    const { isSearch } = this.state;
+
     return (
-      <div>
-        <h2> الكلمات : </h2>
+      <Fragment>
+        <h2> { isSearch ? `تم إيجاد ${this.props.pagination.total} مفهوم` : "" } </h2>
         <div id="words">
           { this.renderWords() }
           { this.props.isFetching ? <Spinner /> : "" }
@@ -59,7 +61,7 @@ class Words extends Component {
           <button onClick={this.handleLoadMore} className="btn-load-more-words">
            إظهار المزيد ({ this.props.pagination.remaining }) </button>
         )}
-      </div>
+      </Fragment>
     );
   }
 }

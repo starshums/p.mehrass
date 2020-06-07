@@ -27,9 +27,10 @@ class SearchBar extends Component {
 
     handleOnSubmit(e) {
         e.preventDefault();
-        const query = `${this.state.query}`;
+        const { query } = this.state;
         this.props.history.push(`/search/${query}`);
-        this.props.getWords(query);
+        this.props.getWords(`?q=${query}`);
+        window.location.reload();
     }
     
     render() {
