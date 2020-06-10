@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 // Mongoose setup
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASE, {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { getWords, getWordPosts } from "../store/actions";
 import Spinner from "../components/Spinner";
 import WordCard from "./WordCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faFile, faLanguage, faList, faListAlt, faListUl, faThList, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 
 class Words extends Component {
   constructor(props) {
@@ -52,7 +54,8 @@ class Words extends Component {
 
     return (
       <Fragment>
-        <h2> { isSearch ? `تم إيجاد ${this.props.pagination.total} مفهوم` : "" } </h2>
+        { isSearch ? <h3> <FontAwesomeIcon icon={ faSearch } /> · تم العثور على {this.props.pagination.total} مفهوم </h3>:
+        <h3> <FontAwesomeIcon icon={ faQuoteLeft } /> · الكلمات ({ this.props.pagination.total }) : </h3>}
         <div id="words">
           { this.renderWords() }
           { this.props.isFetching ? <Spinner /> : "" }

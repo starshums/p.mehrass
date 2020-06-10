@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const HOST = "http://localhost:5000/api/"
+const HOST = "http://localhost:5000/api/v1/";
 
 export const setToken = token => {
     if(token) {
