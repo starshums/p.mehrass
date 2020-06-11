@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+
 // Mongoose setup
-mongoose.set("debug", true);
+mongoose.set("debug", process.env.DEBUG);
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,

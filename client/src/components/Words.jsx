@@ -4,7 +4,7 @@ import { getWords, getWordPosts } from "../store/actions";
 import Spinner from "../components/Spinner";
 import WordCard from "./WordCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faFile, faLanguage, faList, faListAlt, faListUl, faThList, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 
 class Words extends Component {
   constructor(props) {
