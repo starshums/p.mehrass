@@ -49,9 +49,8 @@ const loadState = () => {
 const PERSISTED_STATE = loadState();
 
 const devTools = () => {
-    if( process.env.REACT_APP_ENV === 'production' ) {
+    if( process.env.REACT_APP_ENV !== 'production' )
         return window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-    }
     return null;
 }
 
