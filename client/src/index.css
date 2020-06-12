@@ -224,7 +224,7 @@ label {
   font-size: 16x;
 }
 input {
-  border: none;
+  border: none !important;
   border: 1 solid lightgray;
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
   border-radius: 3px;
@@ -274,4 +274,26 @@ input {
   display: block;
   height: 0;
   clear: both;
+}
+
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .main {
+    width: auto;
+  }
+
+  .content {
+    padding: 20px;
+    float: none;
+    width: auto;
+  }
+
+  .main-sidebar {
+    float: none;  
+  }
+
+  .side-bar {
+    width: auto;
+  }
 }
