@@ -297,3 +297,31 @@ input {
     width: auto;
   }
 }
+
+@media (max-width: 870px) {
+  .nav-links {
+    float: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav-links li, .login-links li {
+    display: list-item;
+    list-style: none;
+    padding: 20px 0;
+  }
+  .login-links {
+    float: none;
+  }
+  .login-links li {
+    display: table;
+    margin: 0 auto;
+  }
+  .profile-link {
+    padding: 0 !important;
+  }
+
+  .word-tifinagh-tag {
+    margin-bottom: 30px !important;
+  }
+}
