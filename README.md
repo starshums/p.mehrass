@@ -12,3 +12,5 @@ Made in the MERN stack
 * Docker
 * Git
 * Trello
+* CKEditor
+* Heroku
