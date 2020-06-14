@@ -21,7 +21,7 @@ const RouteViews = ({ auth }) => (
       <Route exact path="/login" render={() => <AuthPage authType="login" isAuthenticated={auth.isAuthenticated} />} />
       <Route exact path="/register" render={() => <AuthPage authType="register" isAuthenticated={auth.isAuthenticated} />} />
       <Route exact path="/post/:id" render={ props => <PostPage { ...props } /> } />
-      <Route exact path="/add-post" component={ (props) => <AddPostPage isAuthenticated={auth.isAuthenticated} history={props.history} /> } />
+      <Route exact path="/posts/new" component={ (props) => <AddPostPage isAuthenticated={auth.isAuthenticated} history={props.history} /> } />
       <Route exact path="/test" render={ (props) => <TestPage { ...props } /> } />
     </Switch>
   </main>

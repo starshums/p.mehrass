@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getPost } from "../store/actions";
+import parse from "html-react-parser";
 
 const Post = ({ post }) => {
 
     return <div className="">
         <h1> { post.word.text } </h1>
-        <h3> { post.text } </h3>
+        <h3> { parse(post.text) } </h3>
     </div>
 }
 

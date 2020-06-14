@@ -1,5 +1,5 @@
 # Setup and build the client for production
-FROM node as client
+FROM node:12 as client
 
 WORKDIR /usr/app/client/
 COPY client/package*.json ./
@@ -8,7 +8,7 @@ COPY client/ ./
 RUN npm run build
 
 # Setup the server
-FROM node
+FROM node:12
 
 WORKDIR /usr/app/
 COPY --from=client /usr/app/client/build/ ./client/build/

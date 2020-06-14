@@ -49,7 +49,7 @@ class Posts extends Component {
   }
 
   handleAddPostClick() {
-    this.props.history.push("/add-post");
+    this.props.history.push("/posts/new");
   }
 
   render() {
@@ -63,7 +63,7 @@ class Posts extends Component {
         <br/>
         <a className="btn-load-more-words"
           onClick={() => this.handleAddPostClick()} > 
-          <FontAwesomeIcon icon={ faPlusCircle } />  إضافة مفهوم  </a>
+          <FontAwesomeIcon icon={ faPlusCircle } /> </a>
         <br />
         <div className="posts">
           { this.renderPosts() }

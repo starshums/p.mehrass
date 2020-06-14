@@ -28,6 +28,8 @@ body {
 }
 .search-container {
   padding: 50px;
+  position: relative;
+  height: 200px;
 }
 .main-menu, .main-footer {
   background-color: #e99506;
@@ -223,16 +225,25 @@ body {
 label {
   font-size: 16x;
 }
-input {
+input, .search-query-results {
   border: none !important;
-  border: 1 solid lightgray;
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
   border-radius: 3px;
   width: 100%;
   padding: 10px;
   margin: 10px auto;
 }
-
+.search-query-results {
+  border-radius: 0px !important;
+  margin-top: -10px;
+  background-color: white;
+  color: #343a40;
+}
+.search-query-results span a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 
 
@@ -264,6 +275,10 @@ input {
 }
 
 
+/* CKEditor CSS Styling */
+.ck-editor__editable_inline {
+  min-height: 400px;
+}
 
 
 

@@ -4,6 +4,9 @@ import { createPost } from "../store/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave } from "@fortawesome/free-solid-svg-icons";
 import Word from "./Word";
+import CKEditor from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import parse from "html-react-parser";
 
 class AddPost extends Component {
 
@@ -46,18 +49,39 @@ class AddPost extends Component {
 
             <form onSubmit={ this.handleOnSubmit }>
 
-                <label htmlFor="latin"> الشرح : </label><br />
-                <textarea type="text"
+                <div>
+                    <CKEditor
+                        editor={ ClassicEditor }
+                        data={ text }
+                        config={{
+                            language: {
+                                ui: 'ar',
+                                content: 'ar'
+                            },
+                            removePlugins: [ 'ImageUpload', 'Table', 'MediaEmbed' ]
+                        }}
+                        onChange={ (e, editor) => {
+                            const data = editor.getData();
+                            this.setState({ text: data })
+                        }}
+                    />
+                </div>
+
+                <br/>
+                {/* <textarea type="text"
                     className="add-post-area"
                     value={ text }
                     name="text"
                     autoComplete="off"
                     onChange={ this.handleOnChange }
                     rows="30"/>
-                <br /><br />
+                <br /><br /> */}
 
                 <button type="submit" className="btn-load-more-words"> 
                     <FontAwesomeIcon icon= { faSave } />   إضافة    </button>
+
+                <br/>
+                <p> { parse(text) } </p>
             </form>
         </div>
     }

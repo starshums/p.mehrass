@@ -15,8 +15,8 @@ const NavBar = ({ auth, logout }) => (
 
               <ul className="nav-links">
                 <li> <a className="logo" href="/" style={{color: "white"}}> <FontAwesomeIcon icon={ faHome } /> </a> </li>
-                <li> <Link to="/" ><FontAwesomeIcon icon={faHome} /> الصفحة الرئيسية </Link></li>
-                <li> <Link to="/add-post"><FontAwesomeIcon icon={faPlusCircle} /> إضافة</Link> </li>
+                {/* <li> <Link to="/" ><FontAwesomeIcon icon={faHome} /> الصفحة الرئيسية </Link></li> */}
+                <li> <Link to="/addword"><FontAwesomeIcon icon={faPlusCircle} />  كلمة جديدة ؟ </Link> </li>
               </ul>
 
               <ul className="login-links"> 

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import parse from "html-react-parser";
 
 class PostCard extends Component {
 
@@ -13,17 +14,18 @@ class PostCard extends Component {
     }
 
     render() {
+      const { post, user } = this.props;
         return <Fragment>
         <div className="word-content post-main-content clearfix">
-          <div className="main-word clearfix">{this.props.post.text}</div>
+          <div className="main-word clearfix">{ parse(post.text) }</div>
 
-          <div className="post-count" onClick={() => this.handlePostClick(this.props.post._id)} >
-            {new Date(this.props.post.created_at).toLocaleString("en-GB")}
+          <div className="post-count" onClick={() => this.handlePostClick(post._id)} >
+            {new Date(post.created_at).toLocaleString("en-GB")}
           </div>
 
           <div className="date">
             <a href="">
-              {this.props.post.user.username ? this.props.post.user.username : this.props.post.user.email}
+              {post.user.username ? post.user.username : post.user.email}
             </a>
           </div>
         </div>

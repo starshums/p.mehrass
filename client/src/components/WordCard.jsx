@@ -28,7 +28,7 @@ class WordCard extends Component {
             </div>
             <div className="post-count">{ this.props.word.posts_count } مفاهيم</div>
             <div className="date">
-              {new Date(this.props.word.created_at).toLocaleString("en-GB")}
+              {/* {new Date(this.props.word.created_at).toLocaleString("en-GB")} */}
             </div>
           </div>
         </a>
