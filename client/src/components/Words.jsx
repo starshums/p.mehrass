@@ -73,7 +73,7 @@ export default connect(
   (store) => ({
     words: store.words.words,
     pagination: store.words.pagination,
-    isFetching: store.isFetching.isFetching,
+    isFetching: store.isFetching,
   }),
   { getWords, getWordPosts }
 )(Words);

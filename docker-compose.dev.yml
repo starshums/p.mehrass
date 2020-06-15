@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - './server:/usr/app/server/'
-      - './server/node_modules:/usr/app/server/node_modules'
+      - '/usr/app/server/node_modules'
     ports:
       - "5000:5000"
     env_file: ./server/.env
@@ -22,7 +22,7 @@ services:
     stdin_open: true
     volumes:
       - './client:/usr/app/client'
-      - './client/node_modules:/usr/app/client/node_modules'
+      - '/usr/app/client/node_modules'
     ports:
         - '3000:3000'
     env_file: ./client/.env.dev

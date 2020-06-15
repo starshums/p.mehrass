@@ -89,3 +89,20 @@ exports.getWordPosts = async (req, res, next) => {
     next(error);
   }
 };
+
+// Add a new word!
+exports.addWord = async (req, res, next) => {
+  try {
+    const { text, tifinagh, latin } = req.body;
+    const word = await db.Word.create({
+      text: text.toString(),
+      tifinagh: tifinagh.toString(),
+      latin: latin.toString()
+    });
+    await word.save();
+    res.status(201).json(word);
+  } catch (error) {
+    error.status = 400;
+    next(error);
+  }
+};

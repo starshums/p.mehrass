@@ -18,10 +18,8 @@ exports.getPosts = async (req, res, next) => {
 // Add a new post!
 exports.addPost = async (req, res, next) => {
   try {
-    // const word_id = "5ebebf0259127e42e87fdd05";
     const { wordId } = req.body;
     const word = await db.Word.findById(wordId);
-    console.log("WORD ID = ", req.body );
     const { id } = req.user;
     const user = await db.User.findById(id);
     const { text } = req.body;

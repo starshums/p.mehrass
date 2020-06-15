@@ -31,10 +31,10 @@ class AddPost extends Component {
     }
 
     handleOnSubmit(e) {
-        const { createPost, history } = this.props;
+        const { createPost, history, post } = this.props;
         e.preventDefault();
         createPost(this.state);
-        history.push(`/post/${this.props.post._id}`);
+        history.push(`/post/${post._id}`);
     }
 
     render() {
@@ -58,7 +58,8 @@ class AddPost extends Component {
                                 ui: 'ar',
                                 content: 'ar'
                             },
-                            removePlugins: [ 'ImageUpload', 'Table', 'MediaEmbed' ]
+                            removePlugins: [ 'ImageUpload', 'Table', 'MediaEmbed' ],
+                            // mediaEmbed: { previewsInData: true }
                         }}
                         onChange={ (e, editor) => {
                             const data = editor.getData();
@@ -68,17 +69,9 @@ class AddPost extends Component {
                 </div>
 
                 <br/>
-                {/* <textarea type="text"
-                    className="add-post-area"
-                    value={ text }
-                    name="text"
-                    autoComplete="off"
-                    onChange={ this.handleOnChange }
-                    rows="30"/>
-                <br /><br /> */}
 
                 <button type="submit" className="btn-load-more-words"> 
-                    <FontAwesomeIcon icon= { faSave } />   إضافة    </button>
+                    <FontAwesomeIcon icon= { faSave } /> </button>
 
                 <br/>
                 <p> { parse(text) } </p>
@@ -89,6 +82,6 @@ class AddPost extends Component {
 
 export default connect( (store) => ({
     word: store.currentWord,
-    isFetching: store.isFetching.isFetching,
+    isFetching: store.isFetching,
     post: store.currentPost
 }), { createPost })(AddPost);

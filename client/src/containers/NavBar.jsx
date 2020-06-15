@@ -35,7 +35,6 @@ const NavBar = ({ auth, logout }) => (
                   }
               </ul>
             </div>
-            
 
         </div>
       </div>

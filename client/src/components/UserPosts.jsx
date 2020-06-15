@@ -68,7 +68,7 @@ export default connect(
     auth: store.auth,
     posts: store.posts.posts,
     pagination: store.posts.pagination,
-    isFetching: store.isFetching.isFetching,
+    isFetching: store.isFetching,
   }),
   { getUserPosts }
 )(UserPosts);

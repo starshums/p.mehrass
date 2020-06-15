@@ -2,9 +2,7 @@ const router = require("express").Router();
 const controller = require("../controllers");
 const auth = require("../middlewares/auth");
 
-router.route("/")
-    .get(controller.getPosts)
-    .post(auth, controller.addPost);
+router.route("/").get(controller.getPosts).post(auth, controller.addPost);
 
 router.get("/user", auth, controller.userPosts);
 

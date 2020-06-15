@@ -18,4 +18,5 @@ const ProfilePage = (props) => {
 
 export default connect( store => ({
     auth: store.auth,
-    posts: store.posts }), { getUserPosts} )(ProfilePage);
+    posts: store.posts
+}), { getUserPosts} )(ProfilePage);

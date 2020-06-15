@@ -83,5 +83,6 @@ export default connect(
     word: store.currentWord,
     posts: store.posts.posts,
     pagination: store.posts.pagination,
-    isFetching: store.isFetching.isFetching, }), { getWordPosts }
+    isFetching: store.isFetching
+  }), { getWordPosts }
 )(Posts);

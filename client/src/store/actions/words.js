@@ -29,6 +29,19 @@ export const getWords = (query = "") => {
     }
 }
 
+export const addWord = request => {
+    return async dispatch => {
+        try {
+            const { data: word } = await api.call("post", "words", request);
+            dispatch(setCurrentWord(word));
+            dispatch(removeError())
+        } catch(error) {
+            const err = error.response.data.message;
+            dispatch(addError(err));
+        }
+    }
+}
+
 export const getWordPosts = (id, query = "") => {
     return async dispatch => {
         try {
