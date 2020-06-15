@@ -6,6 +6,7 @@ Made in the MERN stack
 
 # Technologies Used
 * Reactjs
+* Redux
 * Nodejs
 * Express
 * MongoDB
