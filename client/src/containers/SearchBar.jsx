@@ -57,7 +57,7 @@ class SearchBar extends Component {
                 <div className="main">
                     <div className="search-container">
                         <form onSubmit={ this.handleOnSubmit }>
-                            <h2><label htmlFor=""><FontAwesomeIcon icon={ faSearch } /> <b> إبحث عن الكلمة التالية : </b> </label></h2>
+                            <h2><label htmlFor=""><FontAwesomeIcon icon={ faSearch } /> <b> قلب على الكلمة لي بغيتي : </b> </label></h2>
                             <input type="text"
                                 name="query"
                                 id="query"

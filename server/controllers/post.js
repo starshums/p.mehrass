@@ -134,37 +134,3 @@ exports.deletePost = async (req, res, next) => {
     next(error);
   }
 };
-
-// Like a post!
-exports.likePost = async (req, res, next) => {
-  try {
-    const { id } = req.params;
-    const { id: user_id } = req.user;
-    const post = await db.Post.findById(id);
-    if (!post) throw new Error("No post was found.");
-    post.liked++;
-    await post.save();
-    console.log(post.liked);
-    res.status(202).json(post);
-  } catch (error) {
-    error.status = 400;
-    next(error);
-  }
-};
-
-// Dislike a post!
-exports.dislikePost = async (req, res, next) => {
-  try {
-    const { id } = req.params;
-    const { id: user_id } = req.user;
-    const post = await db.Post.findById(id);
-    if (!post) throw new Error("No post was found.");
-    post.liked--;
-    await post.save();
-    console.log(post.liked);
-    res.status(202).json(post);
-  } catch (error) {
-    error.status = 400;
-    next(error);
-  }
-};

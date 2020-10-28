@@ -23,7 +23,7 @@ body {
   
 }
 .searchbar {
-  background-color: peru;
+  background-color: #3a3a3a;
   box-shadow: 0 8px 10px rgba(0,0,0,.075);
 }
 .search-container {
@@ -32,7 +32,7 @@ body {
   height: 200px;
 }
 .main-menu, .main-footer {
-  background-color: #e99506;
+  background-color: #181615;
   box-shadow: 0 8px 10px rgba(0,0,0,.075);
 }
 
@@ -76,13 +76,13 @@ body {
 }
 .nav-links li a:hover, .login-links li a:hover {
   background-color: #eff0f1;
-  color: #e99506;
+  color: #181615;
   border-radius: 3px;
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
 }
 
 .logo:hover {
-  background-color: #e99506 !important;
+  background-color: #181615 !important;
   box-shadow: none !important;
 }
 
@@ -100,7 +100,7 @@ body {
   background-color: #dc3545 !important;
 }
 .login-link:hover, .register-link:hover, .logout-link:hover {
-  color: #e99506 !important;
+  color: #181615 !important;
   background-color: white !important;
 }
 .logout-link:hover {
@@ -111,15 +111,14 @@ body {
 }
 .profile-link:hover {
   color: white !important;
-  background-color: #e99506 !important;
+  background-color: #181615 !important;
   box-shadow: none !important;
-  opacity: .9;
 }
 
 .main-content {
   height: 100%;
   padding: 30px;
-  color: #343a40;
+  color: #262321;
   border-right: 1px solid lightgray;
   border-left: 1px solid lightgray;
   position: relative;
@@ -133,7 +132,7 @@ body {
 }
 .word-content {
   border: 1px solid lightgray;
-  border-right: 5px solid #e99506;
+  border-right: 5px solid #3a3a3a;
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
   border-radius: 3px;
   font-weight: bold;
@@ -141,7 +140,7 @@ body {
   width: 100%;
 }
 .word-post {
-  background-color: #e99506 !important;
+  background-color: #3a3a3a !important;
   color: white !important;
   font-size: 34px;
 }
@@ -151,7 +150,7 @@ body {
   line-height: 1.5;
 }
 .word-content:hover {
-  background-color: #e99506;
+  background-color: #3a3a3a;
   cursor: pointer;
 }
 .main-word {
@@ -163,12 +162,12 @@ body {
   float: right;
 }
 .word-latin-tag, .word-tifinagh-tag {
-  color: #f1754e;
+  color: #3a3a3a;
   float: right;
   padding: 8px 20px;
   margin-left: 10px;
   border-radius: 3px;
-  border: 2px solid #f9a576;
+  border: 2px solid #3a3a3a;
   box-shadow: 0 .100rem .15rem rgba(0,0,0,.075)!important;
 }
 .date, .post-count {
@@ -193,7 +192,7 @@ body {
 .btn-load-more-words {
   display: table;
   margin: 15px auto;
-  background-color: #e99506;
+  background-color: #3a3a3a;
   color: #eff0f1;
   border-radius: 2px;
   border: none;
@@ -201,15 +200,15 @@ body {
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
   font-weight: bold;
   font-size: 16px;
-  border: 3px solid #e99506;
+  border: 3px solid #3a3a3a;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   justify-content: center;
 }
 .btn-load-more-words:hover {
   cursor: pointer;
-  color: #e99506;
+  color: #3a3a3a;
   background-color: #eff0f1;
-  border: 3px solid #e99506;
+  border: 3px solid #3a3a3a;
 }
 
 

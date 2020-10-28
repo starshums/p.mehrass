@@ -26,7 +26,7 @@ class WordCard extends Component {
                 { this.props.word.tifinagh ? `· ${this.props.word.tifinagh} : ⵣ` : ""}
               </div>
             </div>
-            <div className="post-count">{ this.props.word.posts_count } مفاهيم</div>
+            <div className="post-count">{ this.props.word.posts_count } ديال المفاهيم</div>
             <div className="date">
               {/* {new Date(this.props.word.created_at).toLocaleString("en-GB")} */}
             </div>

@@ -46,7 +46,7 @@ class UserPosts extends Component {
     return (
       <Fragment>
         <br />
-        <b>  منشوراتك : {this.props.pagination.total} </b>
+        <b>  المنشورات ديالك : {this.props.pagination.total} </b>
         <br />
         <br />
         <div className="posts">
@@ -55,7 +55,7 @@ class UserPosts extends Component {
         </div>
         { this.props.pagination.hasMore ? this.props.pagination.hasMore && !this.props.isFetching && (
           <button onClick={this.handleLoadMore} className="btn-load-more-words">
-            إظهار المزيد ({this.props.pagination.remaining}){" "}
+            زيد ({this.props.pagination.remaining}){" "}
           </button>
         ) : "" }
       </Fragment>

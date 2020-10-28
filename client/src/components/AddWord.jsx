@@ -39,7 +39,7 @@ class AddWord extends Component {
         return <Fragment>
             <form onSubmit={ this.handleOnSubmit }>
 
-                <h2> <FontAwesomeIcon icon={ faPlusCircle } /> إضافة كلمة جديدة :  </h2>
+                <h2> <FontAwesomeIcon icon={ faPlusCircle } /> زيد كلمة جديدة :  </h2>
 
                 <br/>
 

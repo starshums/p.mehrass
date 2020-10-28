@@ -12,7 +12,7 @@ const Word = ({ word, isFetching }) => {
       <div className="word-tifinagh">{ word.tifinagh ? `· [${word.tifinagh} : ⵣ]` : ""}</div>
     </div>
 
-    <div className="post-count">{ word.postsCount } مفاهيم</div>
+    <div className="post-count">{ word.postsCount } ديال المفاهيم</div>
   </div>
 
   { word.latin ?

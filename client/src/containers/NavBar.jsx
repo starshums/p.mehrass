@@ -15,21 +15,20 @@ const NavBar = ({ auth, logout }) => (
 
               <ul className="nav-links">
                 <li> <a className="logo" href="/" style={{color: "white"}}> <FontAwesomeIcon icon={ faHome } /> </a> </li>
-                {/* <li> <Link to="/" ><FontAwesomeIcon icon={faHome} /> الصفحة الرئيسية </Link></li> */}
-                <li> <Link to="/addword"><FontAwesomeIcon icon={faPlusCircle} />  كلمة جديدة ؟ </Link> </li>
+                <li> <Link to="/addword"><FontAwesomeIcon icon={faPlusCircle} />  زيد كلمة جديدة ؟ </Link> </li>
               </ul>
 
               <ul className="login-links"> 
               { !auth.isAuthenticated ?
                       <Fragment>
-                          <li> <Link className="register-link" to="/register"> <FontAwesomeIcon icon={faInfoCircle} /> تسجيل </Link> </li>
-                          <li> <Link className="login-link" to="/login"> <FontAwesomeIcon icon={faDoorClosed} /> دخول </Link> </li>
+                          <li> <Link className="register-link" to="/register"> <FontAwesomeIcon icon={faInfoCircle} /> تقيد </Link> </li>
+                          <li> <Link className="login-link" to="/login"> <FontAwesomeIcon icon={faDoorClosed} /> دخل </Link> </li>
                       </Fragment> :
                       <Fragment>
                           <li>
                             <Link className="profile-link" to="/profile">
                             { auth.user.username ? auth.user.username : auth.user.email } <FontAwesomeIcon icon={faUser} /> </Link>
-                              <a className="logout-link" onClick={ logout }> <FontAwesomeIcon icon={faDoorOpen} /> خروج </a>
+                              <a className="logout-link" onClick={ logout }> <FontAwesomeIcon icon={faDoorOpen} /> خرج </a>
                           </li>
                       </Fragment>
                   }

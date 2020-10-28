@@ -62,7 +62,7 @@ class Words extends Component {
         </div>
         {this.props.pagination.hasMore && !this.props.isFetching && (
           <button onClick={this.handleLoadMore} className="btn-load-more-words">
-           إظهار المزيد ({ this.props.pagination.remaining }) </button>
+           زيد ({ this.props.pagination.remaining }) </button>
         )}
       </Fragment>
     );

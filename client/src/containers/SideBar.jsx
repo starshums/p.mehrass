@@ -8,11 +8,7 @@ const SideBar = () => (
           <b> تابعنا </b>
           <br />
           <br />
-          البوم (باللاتينية: Strigiformes) طائرٌ جارحٌ يَنشَطُ بصورةٍ رئيسيةٍ
-          ليلاً. وهو يستعينُ بحاسةِ سمعِهِ القويّةِ وعينيهِ الكبيرتينِ اللتينِ
-          توفرانِ رؤيةً ليليةً جيدةً، في اصطيادِ الفئرانِ والأرانبِ وغيرها من
-          الحيوانات الصغيرة. للبوم ريشٌ ناعمٌ يوفر له طيرانا صامتا حتى لا يكشف
-          أمره. ولبعضِ أنواعِهِ نَعيقٌ يَسهُلُ
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </div>
     </Fragment>
 )

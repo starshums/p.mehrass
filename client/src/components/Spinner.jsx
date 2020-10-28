@@ -6,7 +6,7 @@ const Spinner = () => {
 
     return (
         <Fragment>
-            <FontAwesomeIcon className="loadingSpinner" icon={ faSpinner} color="orangered" size="lg" spin />
+            <FontAwesomeIcon className="loadingSpinner" icon={ faSpinner} color="#3a3a3a" size="lg" spin />
         </Fragment>
     )
 }

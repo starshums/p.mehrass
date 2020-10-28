@@ -70,7 +70,7 @@ class Posts extends Component {
           { this.props.isFetching ? <Spinner /> : ""}
         </div>
         {this.props.pagination.hasMore && !this.props.isFetching && (
-          <button onClick={this.handleLoadMore} className="btn-load-more-words"> إظهار المزيد ({ this.props.pagination.remaining }) </button>
+          <button onClick={this.handleLoadMore} className="btn-load-more-words"> زيد ({ this.props.pagination.remaining }) </button>
         )}
       </Fragment>
     );
