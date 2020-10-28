@@ -11,7 +11,4 @@ router.route("/:id")
     .delete(auth, controller.deletePost)
     .post(auth, controller.updatePost);
 
-router.route("/like/:id").post(auth, controller.likePost);
-router.route("/dislike/:id").post(auth, controller.dislikePost);
-
 module.exports = router;
