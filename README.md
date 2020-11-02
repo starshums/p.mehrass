@@ -1,5 +1,5 @@
 # :clipboard: Project.Mehrass
-[in_dev :hammer_and_wrench:] This app will display a list words from the Moroccan :morocco: dialect and it's meaning, it's a dictionary like website.
+[in_dev :hammer_and_wrench:] This app will display a list words from the Moroccan :morocco: dialect and their meaning, it's a dictionary like website.
 With the possibility for users to join add and update more words on the fly!
 
 Made using the MERN stack with Docker!
