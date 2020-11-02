@@ -7,8 +7,8 @@ Made using the MERN stack with Docker!
 *MERN stands for Mongo, Express, React and NodeJS*
 
 # :globe_with_meridians: Demo
-This application is deployed and hosted on Heroku with CI/CD enabled :
-[Application live demo](https://project-mehrass.herokuapp.com/)
+This app is deployed and hosted on Heroku with CI/CD enabled :
+[Run app live demo](https://project-mehrass.herokuapp.com/)
 
 # :floppy_disk: Database
 MongoDB Atlas is mongoDB as a service, where the whole cluster is completely managed by mongoDB. and we can just concentrate on the application.
@@ -16,6 +16,7 @@ MongoDB Atlas is mongoDB as a service, where the whole cluster is completely man
 More information can be found here : [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 
 # :hash: Enviroment Variables
+In ```/server``` directory, create ```.env``` file and have the following variables :
 ```
 PORT=5000
 NODE_ENV=production
