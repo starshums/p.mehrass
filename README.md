@@ -8,7 +8,7 @@ Made using the MERN stack with Docker!
 
 # :globe_with_meridians: Demo
 This application is deployed and hosted on Heroku with CI/CD enabled :
-[Application live demo](https://mysterious-anchorage-16443.herokuapp.com/)
+[Application live demo](https://project-mehrass.herokuapp.com/)
 
 # :floppy_disk: Database
 MongoDB Atlas is mongoDB as a service, where the whole cluster is completely managed by mongoDB. and we can just concentrate on the application.
