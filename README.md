@@ -36,22 +36,12 @@ In the root directory as well, run the following :
 ``` docker-compose up --build ```
 
 # :computer: Technologies Used
-* Reactjs
-* Redux
-* Webpack
-* Axios
-* Nodejs
-* Express
-* MongoDB
-* MongoDB Atlas
-* Mongoose
-* Docker
-* Docker Compose
-* Git
-* Trello
-* CKEditor
+* Nodejs, Express, JWT
+* MongoDB, MongoDB Atlas, Mongoose
+* React, Redux, Webpack, Axios, CKEditor
+* Docker, Docker Compose
+* Git, Trello
 * Heroku
-* JWT
 
 ## :memo: License
 [MIT](https://opensource.org/licenses/MIT)
