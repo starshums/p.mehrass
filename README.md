@@ -45,3 +45,5 @@ In the root directory as well, run the following :
 
 ## :memo: License
 [MIT](https://opensource.org/licenses/MIT)
+
+p.s: I don't use class based componenets anymore!
